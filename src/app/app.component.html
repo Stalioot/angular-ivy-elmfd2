@@ -1,1 +1,7 @@
 <h3> {{ title }} </h3>
+
+<ul>
+  <li *ngFor='let postit of arrayPostIT' >
+    <b>{{postit.titolo}}</b> - {{postit.testo}}
+  </li>
+</ul>
