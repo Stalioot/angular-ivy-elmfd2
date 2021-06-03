@@ -6,6 +6,7 @@
   </li>
 </ul>
 
-<p>
-  {{selezionata}}
+<p *ngIf = "selezione !== undefined">
+  {{selezione.testo}}
+  <button (click) = 'clean()'>Chiudi</button>
 </p>
