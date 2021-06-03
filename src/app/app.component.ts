@@ -16,9 +16,13 @@ class postIT {
 })
 export class AppComponent  {
   title: string = 'Progetto POST-IT in Angular ' + VERSION.major;
+  selezionata: string;
   arrayPostIT: Array<postIT> = [
     new postIT('Lavatrice','ritirare i panni alle 15'),
     new postIT('Meccanico','ritirare la macchina alle 17'),
     new postIT('Abbonamento','rinnovare abbonamento sky')
   ];
+  seleziona(titolo: string){
+    this.selezionata = titolo;
+  }
 }

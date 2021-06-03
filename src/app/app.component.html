@@ -2,6 +2,10 @@
 
 <ul>
   <li *ngFor='let postit of arrayPostIT' >
-    <b>{{postit.titolo}}</b> - {{postit.testo}}
+    <button (click)="seleziona(postit.titolo)">{{postit.titolo}}</button>
   </li>
 </ul>
+
+<p>
+  {{selezionata}}
+</p>
