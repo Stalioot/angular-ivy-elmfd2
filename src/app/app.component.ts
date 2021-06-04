@@ -19,16 +19,14 @@ export class AppComponent  {
   title: string = 'Progetto POST-IT in Angular ' + VERSION.major;
   selezione: postIT;
   arrayPostIT: Array<postIT> = [
-    new postIT('Lavatrice','ritirare i panni alle 15'),
-    new postIT('Meccanico','ritirare la macchina alle 17'),
-    new postIT('Abbonamento','rinnovare abbonamento sky')
+    new postIT('Lavatrice','ritirare i panni alle 15')
   ];
   constructor(private service: PostItService) { }
-  seleziona(itemName: string){
-    var trovato: Array<postIT> = this.arrayPostIT.filter(
-      el => ( el.titolo === itemName)
-    );
-    this.selezione = trovato[0];
+
+  seleziona(itemName: string) {
+    let msg = JSON.stringify(this.arrayPostIT);
+    this.service.postData(msg)
+    .then(response => response.json(), error => alert(error));
   }
   clean() {
     this.selezione=undefined;
