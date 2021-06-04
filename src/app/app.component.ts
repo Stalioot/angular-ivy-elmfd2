@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-
+import { PostItService } from './post-it.service';
 class postIT {
   titolo: string;
   testo: string;
