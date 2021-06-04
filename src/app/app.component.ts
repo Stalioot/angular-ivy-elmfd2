@@ -1,6 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { PostItService } from './post-it.service';
-class postIT {
+
+export class postIT {
   titolo: string;
   testo: string;
   constructor(titolo: string, testo: string) {
@@ -22,6 +23,7 @@ export class AppComponent  {
     new postIT('Meccanico','ritirare la macchina alle 17'),
     new postIT('Abbonamento','rinnovare abbonamento sky')
   ];
+  constructor(private service: PostItService) { }
   seleziona(itemName: string){
     var trovato: Array<postIT> = this.arrayPostIT.filter(
       el => ( el.titolo === itemName)
