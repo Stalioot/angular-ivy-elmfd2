@@ -34,7 +34,14 @@ export class AppComponent  {
   }
 
   showPost(){
-
+    this.service.getData()
+    .then(response => response.json(), error => alert(error))
+    .then(data => {
+      console.log(data, "sono qui");
+      var obj = JSON.parse(data);
+      console.log(obj[0].titolo);
+      console.log(obj[0].testo);
+    });
   }
     
   clean() {
