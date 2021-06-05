@@ -21,7 +21,7 @@ export class AppComponent  {
   arrayPostIT: Array<postIT> = [];
   constructor(private service: PostItService) { }
 
-  newPostIT(titlePost: string, text: string){
+ newPostIT(titlePost: string, text: string){
     let nuovoPost: postIT;
     nuovoPost.titolo = titlePost;
     nuovoPost.testo = text;
