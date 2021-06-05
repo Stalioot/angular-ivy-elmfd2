@@ -1,12 +1,5 @@
 <h3> {{ title }} </h3>
 
-<ul>
-  <li *ngFor='let postit of arrayPostIT' >
-    <button (click)="seleziona(postit.titolo)">{{postit.titolo}}</button>
-  </li>
-</ul>
-
-<p *ngIf = "selezione !== undefined">
-  {{selezione.testo}}
-  <button (click) = 'clean()'>Chiudi</button>
-</p>
+Titolo:<input #title/><br><br/>
+Testo:<input #text/>
+<button (click)="newPostIT(title.value, text.value);title.value='';text.value='';">SALVA</button>
