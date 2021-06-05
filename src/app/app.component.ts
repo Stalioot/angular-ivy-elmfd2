@@ -4,10 +4,6 @@ import { PostItService } from './post-it.service';
 export class postIT {
   titolo: string;
   testo: string;
-  constructor(titolo: string, testo: string) {
-    this.titolo=titolo;
-    this.testo=testo;
-  }
 }
 
 @Component({
@@ -22,7 +18,7 @@ export class AppComponent  {
   constructor(private service: PostItService) { }
 
  newPostIT(titlePost: string, text: string){
-    let nuovoPost: postIT;
+    let nuovoPost: postIT = new postIT();
     nuovoPost.titolo = titlePost;
     nuovoPost.testo = text;
     console.log(nuovoPost);

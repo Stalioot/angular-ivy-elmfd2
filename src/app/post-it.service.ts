@@ -12,14 +12,11 @@ export class PostItService {
 
   public getData() {
    return fetch(this.apiURL + '/get?key=' + this.apiKEY)
-    .then(response => response.json(), error => alert(error));
   }
   public postData(testo: string) {
    return fetch(this.apiURL + '/post?key=' + this.apiKEY + '&msg=' +testo, { method: 'POST'})
-    .then(response => response.json(), error => alert(error));
   }
   public newKey() {
    return fetch(this.apiURL + '/new', { method: 'POST' })
-    .then(response => response.json(), error => alert(error));
   }
 }
