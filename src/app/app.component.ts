@@ -47,7 +47,5 @@ export class AppComponent  {
     });
   }
     
-  clean() {
-    this.selezione=undefined;
-  }
+  
 }
