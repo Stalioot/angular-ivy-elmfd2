@@ -4,5 +4,9 @@ Titolo:<input #titolo1/><br><br/>
 Testo:<input #text/>
 <button (click)="newPostIT(titolo1.value, text.value);titolo1.value='';text.value='';">SALVA</button> 
 <button (click)="showPost()">MOSTRA</button>
-
+<br/><br/>
+<ul>
+  <li *ngFor='let post of arrayPostIT'>
+    <button (click)="caricaPost(post)">{{post.titolo}}</button>
+</ul>
 <app-notifica [dato]="selezione"> </app-notifica>

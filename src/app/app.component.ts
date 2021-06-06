@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, VERSION } from '@angular/core';
 import { PostItService } from './post-it.service';
 
@@ -34,12 +35,17 @@ export class AppComponent  {
     .then(data => console.log(data));
   }
 
+  caricaPost(oggetto){
+    this.selezione.titolo = oggetto.titolo;
+    this.selezione.testo = oggetto.testo;
+  }
+
   showPost(){
     this.service.getData()
     .then(response => response.json(), error => alert(error))
     .then(data => {
       console.log(data, "sono qui");
-      var obj = JSON.parse(data);
+      let obj = JSON.parse(data);
       for (let i in obj) {
       console.log(obj[i].titolo);
       console.log(obj[i].testo);
