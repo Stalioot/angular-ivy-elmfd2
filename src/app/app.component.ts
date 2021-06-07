@@ -35,11 +35,6 @@ export class AppComponent  {
     .then(data => console.log(data));
   }
 
-  caricaPost(oggetto){
-    this.selezione.titolo = oggetto.titolo;
-    this.selezione.testo = oggetto.testo;
-  }
-
   showPost(){
     this.service.getData()
     .then(response => response.json(), error => alert(error))
