@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { PostItService } from './post-it.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotificaComponent } from './notifica/notifica.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, NotificaComponent ],
+  declarations: [ AppComponent, NotificaComponent, NewPostComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PostItService]
 })
