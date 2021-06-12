@@ -18,16 +18,9 @@ export class AppComponent  {
   arrayPostIT: Array<postIT> = [];
   constructor(private service: PostItService) { }
 
- newPostIT(titlePost: string, text: string){
-    let nuovoPost: postIT = new postIT();
-    nuovoPost.titolo = titlePost;
-    nuovoPost.testo = text;
-    console.log(nuovoPost);
-    this.addPost(nuovoPost);
-  }
-
   addPost(newPost: postIT) {
     this.arrayPostIT.push(newPost);
+     console.log(this.arrayPostIT);
     let msg: string = JSON.stringify(this.arrayPostIT);
     console.log(this.arrayPostIT.length);
     this.service.postData(msg)

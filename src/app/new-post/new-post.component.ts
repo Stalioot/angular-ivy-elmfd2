@@ -1,17 +1,16 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { postIT } from '../app.component';
 
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.css']
 })
-export class NewPostComponent implements OnInit {
-  @Output() newPostEvent = new EventEmitter<object>();
+export class NewPostComponent {
+  @Output() newPostEvent = new EventEmitter<postIT>();
   
-  newPost(newTitle: string, newText: string) {
-    this.newPostEvent.emit({ newTitle, newText });
-  }
-  ngOnInit() {
+  newPost(titolo: string, testo: string) {
+    this.newPostEvent.emit({ titolo, testo });
   }
 
 }
