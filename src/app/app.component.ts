@@ -14,7 +14,7 @@ export class postIT {
 })
 export class AppComponent  {
   title: string = 'Progetto POST-IT in Angular ' + VERSION.major;
-  selezione: postIT;
+  selezione: postIT = new postIT();
   arrayPostIT: Array<postIT> = [];
   constructor(private service: PostItService) { }
 
@@ -40,6 +40,11 @@ export class AppComponent  {
       }
     });
   }
-    
+  
+   mostra(selected) {
+      this.selezione.titolo = selected.titolo;
+      this.selezione.testo = selected.testo;
+      console.log(this.selezione);
+   }
   
 }

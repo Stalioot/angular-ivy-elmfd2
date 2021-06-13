@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { postIT } from '../app.component';
 
 @Component({
@@ -6,13 +6,11 @@ import { postIT } from '../app.component';
   templateUrl: './notifica.component.html',
   styleUrls: ['./notifica.component.css']
 })
-export class NotificaComponent implements OnInit {
+export class NotificaComponent {
   @Input() dato: postIT;
-  constructor() { }
+  
   clean() {
     this.dato=undefined;
-  }
-  ngOnInit() {
   }
 
 }
