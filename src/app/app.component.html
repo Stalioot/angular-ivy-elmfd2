@@ -5,6 +5,7 @@
     <button (click)="mostra(post)">{{post.titolo}}</button>
   </li>
 </ul>
-<app-notifica [dato]="selezione"> </app-notifica>
 
 <app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
+
+<app-notifica [dato]="selezione"> </app-notifica>
