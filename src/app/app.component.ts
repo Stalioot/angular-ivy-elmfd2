@@ -33,11 +33,9 @@ export class AppComponent  {
     .then(response => response.json(), error => alert(error))
     .then(data => {
       console.log(data, "sono qui");
-      let obj = JSON.parse(data);
-      for (let i in obj) {
-        this.arrayPostIT.push(obj[i]);
-        console.log(obj[i].titolo);
-        console.log(obj[i].testo);
+      let arraypost = JSON.parse(data);
+      for (let post in arraypost) {
+        this.arrayPostIT.push(arraypost[post]);
       }
     });
   }
