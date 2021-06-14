@@ -2,7 +2,7 @@
 
 <app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
 
-<br/><br/><button (click)="showPost()"> CARICA </button>
+<br/><br/><div *ngIf = "flag == 0 "> {{ showPost() }} </div>
 <ul>
   <li *ngFor='let post of arrayPostIT'>
     <button (click)="mostra(post)">{{post.titolo}}</button>

@@ -16,6 +16,7 @@ export class AppComponent  {
   title: string = 'Progetto POST-IT in Angular ' + VERSION.major;
   selezione: postIT;
   arrayPostIT: Array<postIT> = [];
+  flag = 0;
   constructor(private service: PostItService) { }
 
   addPost(newPost: postIT) {
@@ -29,6 +30,7 @@ export class AppComponent  {
   }
 
   showPost(){
+    this.flag=1;
     this.service.getData()
     .then(response => response.json(), error => alert(error))
     .then(data => {
