@@ -45,8 +45,6 @@ export class AppComponent  {
   deletePost(selected) {
     this.arrayPostIT = this.arrayPostIT.filter(data => data !=selected);
     this.selezione = new postIT();
-    this.selezione.titolo = undefined;
-    this.selezione.testo = undefined;
     let msg: string = JSON.stringify(this.arrayPostIT);
     this.service.postData(msg)
     .then(response => response.json(), error => alert(error)); 
