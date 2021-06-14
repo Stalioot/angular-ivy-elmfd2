@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class PostItService {
-  apiKEY: string = '3dfcae7e';
+  apiKEY: string = 'c5d80316';
   apiURL: string = 'https://eu-central-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/kvaas-giwjg/service/kvaas/incoming_webhook';
   constructor(private service: HttpClient) { }
 

@@ -1,11 +1,13 @@
 <h3> {{ title }} </h3>
 
+<app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
+
+<br/><br/><button (click)="showPost()"> CARICA </button>
 <ul>
   <li *ngFor='let post of arrayPostIT'>
     <button (click)="mostra(post)">{{post.titolo}}</button>
+    <button (click)="deletePost(post)"> X </button>
   </li>
 </ul>
-
-<app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
 
 <app-notifica [dato]="selezione"> </app-notifica>

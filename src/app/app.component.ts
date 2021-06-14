@@ -35,10 +35,21 @@ export class AppComponent  {
       console.log(data, "sono qui");
       let obj = JSON.parse(data);
       for (let i in obj) {
-      console.log(obj[i].titolo);
-      console.log(obj[i].testo);
+        this.arrayPostIT.push(obj[i]);
+        console.log(obj[i].titolo);
+        console.log(obj[i].testo);
       }
     });
+  }
+
+  deletePost(selected) {
+    this.arrayPostIT = this.arrayPostIT.filter(data => data !=selected);
+    this.selezione = new postIT();
+    this.selezione.titolo = undefined;
+    this.selezione.testo = undefined;
+    let msg: string = JSON.stringify(this.arrayPostIT);
+    this.service.postData(msg)
+    .then(response => response.json(), error => alert(error)); 
   }
   
    mostra(selected) {
