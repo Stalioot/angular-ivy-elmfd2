@@ -17,6 +17,7 @@ export class AppComponent  {
   selezione: postIT;
   arrayPostIT: Array<postIT> = [];
   flag = 0;
+  user : string = '';
   constructor(private service: PostItService) { }
 
   addPost(newPost: postIT) {
@@ -54,6 +55,15 @@ export class AppComponent  {
       this.selezione.titolo = selected.titolo;
       this.selezione.testo = selected.testo;
       console.log(this.selezione);
+   }
+
+   getKey(){
+    this.service.newKey()
+    .then(response => response.json(), error => alert(error))
+    .then(k => {
+      this.user = k;
+      console.log(this.user);
+    });
    }
   
 }
