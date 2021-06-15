@@ -30,8 +30,10 @@ export class AppComponent  {
     .then(data => console.log(data));
   }
 
-  showPost(){
-    this.flag=1;
+  showPost(k){
+    this.user = k;
+    this.service.apiKEY = k;
+    console.log(k);
     this.service.getData()
     .then(response => response.json(), error => alert(error))
     .then(data => {
@@ -62,6 +64,7 @@ export class AppComponent  {
     .then(response => response.json(), error => alert(error))
     .then(k => {
       this.user = k;
+      this.service.apiKEY = this.user;
       console.log(this.user);
     });
    }

@@ -2,7 +2,7 @@
 
 <app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
 
-<br/><br/><div *ngIf = "flag == 0 "> {{ showPost() }} </div>
+
 <ul>
   <li *ngFor='let post of arrayPostIT'>
     <button (click)="mostra(post)">{{post.titolo}}</button>
@@ -12,4 +12,7 @@
 
 <app-notifica [dato]="selezione"> </app-notifica>
 
-<button (click)="getKey()"> chiave </button>
+<button (click)="getKey()"> NUOVO UTENTE </button><br/><br/>
+Ti sei autenticato come: {{ user }} <br/><br/>
+<input #chiave>
+<button (click)="showPost(chiave.value); chiave.value=''"> ACCEDI </button>
