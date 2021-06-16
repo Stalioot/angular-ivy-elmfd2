@@ -1,19 +1,21 @@
 <h3> {{ title }} </h3>
-Accedi prima di creare un post-it <br/>
 
-<app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
+<div *ngIf="logged == false">
+  <app-key (newLoginEvent)="showPost($event)" (newRegisterEvent)="getKey()"> </app-key> <br/><br/>
+</div>
 
+<div *ngIf="logged == true">
 
-<ul>
-  <li *ngFor='let post of arrayPostIT'>
-    <button (click)="mostra(post)">{{post.titolo}}</button>
-    <button (click)="deletePost(post)"> X </button>
-  </li>
-</ul>
+  Ti sei autenticato come: {{ user }} <br/> <br/>
+  <app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
 
-<app-notifica [dato]="selezione"> </app-notifica>
+  <ul>
+    <li *ngFor='let post of arrayPostIT'>
+      <button (click)="mostra(post)">{{post.titolo}}</button>
+      <button (click)="deletePost(post)"> X </button>
+    </li>
+  </ul>
 
-<button (click)="getKey()"> NUOVO UTENTE </button><br/><br/>
-Ti sei autenticato come: {{ user }} <br/><br/>
-<input #chiave>
-<button (click)="showPost(chiave.value); chiave.value=''"> ACCEDI </button>
+  <app-notifica [dato]="selezione"> </app-notifica>
+
+</div>

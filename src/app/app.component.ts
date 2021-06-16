@@ -1,5 +1,5 @@
 import { error } from '@angular/compiler/src/util';
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 import { PostItService } from './post-it.service';
 
 export class postIT {
@@ -13,10 +13,10 @@ export class postIT {
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  title: string = 'Progetto POST-IT in Angular ' + VERSION.major;
+  title: string = 'Salva i tuoi POST-IT ';
   selezione: postIT;
   arrayPostIT: Array<postIT> = [];
-  flag = 0;
+  logged: boolean = false;
   user : string = '';
   constructor(private service: PostItService) { }
 
@@ -42,6 +42,7 @@ export class AppComponent  {
       for (let post in arraypost) {
         this.arrayPostIT.push(arraypost[post]);
       }
+      this.logged = true;
     });
   }
 
@@ -66,6 +67,7 @@ export class AppComponent  {
       this.user = k;
       this.service.apiKEY = this.user;
       console.log(this.user);
+      this.logged = true;
     });
    }
   
