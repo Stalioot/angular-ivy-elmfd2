@@ -10,7 +10,9 @@ export class NewPostComponent {
   @Output() newPostEvent = new EventEmitter<postIT>();
   
   newPost(titolo: string, testo: string) {
-    this.newPostEvent.emit({ titolo, testo });
+    if (titolo != ""){
+      this.newPostEvent.emit({ titolo, testo });
+    }
   }
 
 }
