@@ -50,7 +50,9 @@ export class AppComponent  {
   }
 
   deletePost(selected) {
-    this.arrayPostIT = this.arrayPostIT.filter(data => data !=selected);
+    console.log(this.arrayPostIT);
+    this.arrayPostIT = this.arrayPostIT.filter(data => data != selected);
+    console.log(this.arrayPostIT);
     this.arrayPostImp = this.arrayPostIT.filter(data => data.important == true);
     this.selezione.titolo = undefined;
     this.selezione.testo = undefined;
