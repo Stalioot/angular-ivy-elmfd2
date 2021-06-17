@@ -27,8 +27,7 @@ export class AppComponent  {
     this.arrayPostIT.push(newPost);
     let msg: string = JSON.stringify(this.arrayPostIT);
     this.service.postData(msg)
-    .then(response => response.json(), error => alert(error))
-    .then(data => console.log(data));
+    .then(response => response.json(), error => alert(error));
   }
 
   showPost(k){
