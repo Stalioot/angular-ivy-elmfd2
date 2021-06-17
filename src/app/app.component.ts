@@ -53,8 +53,7 @@ export class AppComponent  {
     this.arrayPostIT = this.arrayPostIT.filter(data => data != selected);
     this.arrayPostImp = this.arrayPostIT.filter(data => data.important == true);
     this.selezione = new postIT();
-    this.selezione.titolo = undefined;
-    this.selezione.testo  = undefined;
+    this.selezione = undefined;
     let msg: string = JSON.stringify(this.arrayPostIT);
     this.service.postData(msg)
     .then(response => response.json(), error => alert(error)); 
