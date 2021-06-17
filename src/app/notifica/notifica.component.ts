@@ -8,7 +8,7 @@ import { postIT } from '../app.component';
 })
 export class NotificaComponent {
   @Input() dato: postIT;
-  
+
   clean() {
     this.dato=undefined;
   }

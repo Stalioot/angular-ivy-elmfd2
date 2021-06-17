@@ -50,13 +50,13 @@ export class AppComponent  {
   }
 
   deletePost(selected) {
-    console.log(this.arrayPostIT);
     this.arrayPostIT = this.arrayPostIT.filter(data => data != selected);
-    console.log(this.arrayPostIT);
     this.arrayPostImp = this.arrayPostIT.filter(data => data.important == true);
+    this.selezione = new postIT();
     this.selezione.titolo = undefined;
-    this.selezione.testo = undefined;
+    this.selezione.testo  = undefined;
     let msg: string = JSON.stringify(this.arrayPostIT);
+    console.log(msg, "sono quii");
     this.service.postData(msg)
     .then(response => response.json(), error => alert(error)); 
   }
