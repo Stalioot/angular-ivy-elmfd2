@@ -56,7 +56,6 @@ export class AppComponent  {
     this.selezione.titolo = undefined;
     this.selezione.testo  = undefined;
     let msg: string = JSON.stringify(this.arrayPostIT);
-    console.log(msg, "sono quii");
     this.service.postData(msg)
     .then(response => response.json(), error => alert(error)); 
   }
