@@ -7,15 +7,27 @@
 <div *ngIf="logged == true">
 
   Ti sei autenticato come: {{ user }} <br/> <br/>
-  <app-new-post (newPostEvent)="addPost($event)"> </app-new-post>
+  <app-new-post (newPostEvent)="addPost($event)"> </app-new-post> <br/><br/>
 
-  <ul>
-    <li *ngFor='let post of arrayPostIT'>
-      <button (click)="mostra(post)">{{post.titolo}}</button>
-      <button (click)="deletePost(post)"> X </button>
-    </li>
-  </ul>
 
+  <div *ngIf="impFlag==false">
+    <button (click)="mostraImp()"> Mostra Importanti </button>
+    <ul>
+      <li *ngFor='let post of arrayPostIT'>
+        <button (click)="mostra(post)">{{post.titolo}}</button>
+        <button (click)="deletePost(post)"> X </button>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="impFlag==true">
+    <button (click)="mostraAll()"> Mostra Tutti </button>
+    <ul>
+      <li *ngFor='let postImp of arrayPostImp'>
+        <button (click)="mostra(postImp)">{{postImp.titolo}}</button>
+        <button (click)="deletePost(postImp)"> X </button>
+      </li>
+    </ul>
+  </div>
   <app-notifica [dato]="selezione"> </app-notifica>
 
 </div>

@@ -1,3 +1,4 @@
-Titolo:<input #title/><br><br/>
-Testo:<input #text/>
- <button (click)="newPost(title.value, text.value);title.value='';text.value=''">SALVA</button>
+Titolo:<input #title/><br/><br/>
+Testo:<input #text/><br/><br/>
+Post-IT importante: <input type="radio" #postImportante/>
+ <button (click)="newPost(title.value, text.value, postImportante.checked);title.value='';text.value='';postImportante.checked=false">SALVA</button>

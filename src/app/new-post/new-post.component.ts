@@ -9,9 +9,9 @@ import { postIT } from '../app.component';
 export class NewPostComponent {
   @Output() newPostEvent = new EventEmitter<postIT>();
   
-  newPost(titolo: string, testo: string) {
+  newPost(titolo: string, testo: string, important: boolean) {
     if (titolo != ""){
-      this.newPostEvent.emit({ titolo, testo });
+      this.newPostEvent.emit({ titolo, testo, important });
     }
   }
 

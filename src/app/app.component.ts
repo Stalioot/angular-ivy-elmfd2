@@ -5,6 +5,7 @@ import { PostItService } from './post-it.service';
 export class postIT {
   titolo: string;
   testo: string;
+  important: boolean;
 }
 
 @Component({
@@ -16,8 +17,10 @@ export class AppComponent  {
   title: string = 'Salva i tuoi POST-IT ';
   selezione: postIT;
   arrayPostIT: Array<postIT> = [];
+  arrayPostImp: Array<postIT> = [];
   logged: boolean = false;
-  user : string = '';
+  user: string = '';
+  impFlag: boolean = false;
   constructor(private service: PostItService) { }
 
   addPost(newPost: postIT) {
@@ -60,6 +63,15 @@ export class AppComponent  {
       this.selezione.titolo = selected.titolo;
       this.selezione.testo = selected.testo;
       console.log(this.selezione);
+   }
+
+   mostraImp(){
+     this.arrayPostImp = this.arrayPostIT.filter(data => data.important == true);
+     this.impFlag = true;
+   }
+   
+   mostraAll(){
+     this.impFlag = false;
    }
 
    getKey(){
