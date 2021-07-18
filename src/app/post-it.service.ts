@@ -11,12 +11,12 @@ export class PostItService {
   constructor(private service: HttpClient) { }
 
   public getData() {
-   return fetch(this.apiURL + '/get?key=' + this.apiKEY)
+   return fetch(this.apiURL + '/get?key=' + this.apiKEY);
   }
   public postData(testo: string) {
-   return fetch(this.apiURL + '/post?key=' + this.apiKEY + '&msg=' +testo, { method: 'POST'})
+   return fetch(this.apiURL + '/post?key=' + this.apiKEY + '&msg=' +testo, { method: 'POST'});
   }
   public newKey() {
-   return fetch(this.apiURL + '/new', { method: 'POST' })
+   return fetch(this.apiURL + '/new', { method: 'POST' });
   }
 }
